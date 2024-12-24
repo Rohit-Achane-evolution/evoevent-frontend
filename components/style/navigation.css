@@ -1,0 +1,422 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    background-color: #fff2ef;
+}
+
+.event-card {
+    transition: transform 0.2s;
+    padding: 5px;
+    border-radius: 15px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+
+.event-card:hover {
+    transform: translateY(-15px);
+}
+
+
+.logo {
+    height: 40px;
+}
+
+.event-image {
+    height: 200px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.list-view .event-image {
+    width: 150px;
+    height: 80px;
+}
+
+
+.empty-state {
+    text-align: center;
+    padding: 100px 20px;
+    background-color: #fff2ef;
+}
+
+.empty-state img {
+    width: 120px;
+    margin-bottom: 20px;
+}
+
+#emptyState,
+#emptySearch {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 100vh;
+}
+
+#emptyState img,
+#emptySearch img {
+
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.event-type-badge {
+    font-size: 0.8rem;
+    padding: 0.25rem 0.5rem;
+    background-color: #ff5722;
+    color: white;
+}
+
+.btn-add-event {
+    background-image: linear-gradient(to right, #FD5900, #FFB48C);
+    border: 1px solid transparent;
+}
+
+.btn-add-event:hover {
+
+    background-color: #f4511e;
+    border-color: #f4511e;
+    color: white;
+}
+
+.modal-content {
+    border-radius: 15px;
+}
+
+.image-upload-area {
+    border: 2px dashed #ddd;
+    border-radius: 8px;
+    padding: 40px;
+    text-align: center;
+    cursor: pointer;
+}
+
+h3 {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+p.text-muted {
+    font-size: 0.9rem;
+    margin-top: 0;
+}
+
+.height {
+    height: fit-content;
+}
+
+.custom-dropdown {
+    position: relative;
+    width: 100%;
+}
+
+.dropdown-toggle {
+    width: 100%;
+    padding: 0.5rem;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+    text-align: left;
+    cursor: pointer;
+    font-size: 1rem;
+    color: #333;
+    transition: border-color 0.3s ease;
+}
+
+.dropdown-toggle:focus {
+    outline: none;
+    border-color: #ff5722;
+}
+
+.dropdown-menu {
+    position: absolute;
+    width: 100%;
+    bottom: 100%;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: none;
+    list-style: none;
+    padding: 0;
+    z-index: 1000;
+}
+
+.dropdown-menu.show {
+    display: block;
+}
+
+.dropdown-item {
+    padding: 0.5rem;
+    cursor: pointer;
+    color: #333;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dropdown-item:hover {
+    background-color: #ffe7dc;
+    color: #ff5722;
+}
+
+.dropdown-toggle.selected {
+    color: #ff5722;
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1000;
+}
+
+.filter-modal {
+    display: block;
+    /* Keep it block, controlled by classes */
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 300px;
+    height: 100%;
+    background: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    z-index: 1001;
+    transition: transform 0.3s ease-in-out;
+    transform: translateX(100%);
+    overflow-y: auto;
+}
+
+.filter-modal.show {
+    transform: translateX(0);
+}
+
+.category-option {
+    cursor: pointer;
+    padding: 8px 12px;
+    border-radius: 20px;
+    background-color: #f0f0f0;
+    color: #333;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.category-option.selected {
+    background-color: #FFF1EA;
+    color: #ff5722;
+}
+
+.category-option:hover {
+    background-color: #e0e0e0;
+}
+
+.filter-footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+#btnReset,
+#btnApplyFilter {
+    width: 48%;
+}
+
+#btnApplyFilter {
+    background-color: #ff5722;
+    border-color: #ff5722;
+}
+
+#btnApplyFilter:hover {
+    background-color: #e64a19;
+    border-color: #e64a19;
+}
+
+.btn-close {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #333;
+}
+
+.btn-close:hover {
+    color: #ff5722;
+}
+
+.btn-close {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+@media (max-width: 767px) {
+    .modal-dialog {
+        margin: 0;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        border-radius: 15px 15px 0 0;
+        transform: translateY(100%);
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .modal.fade .modal-dialog {
+        transform: translateY(100%);
+    }
+
+    .modal.fade.show .modal-dialog {
+        transform: translateY(0);
+    }
+
+    .modal-header,
+    .modal-footer {
+        padding: 1rem;
+    }
+
+    .input-group.w-100 {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        background-color: white;
+        padding: 0.5rem;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+}
+
+td {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+td:hover {
+    white-space: normal;
+}
+
+td[data-tooltip]:hover::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    background: #333;
+    color: #fff;
+    padding: 5px;
+    border-radius: 4px;
+    font-size: 12px;
+    white-space: nowrap;
+    z-index: 10;
+}
+
+.pagination .page-link {
+    color: #6c757d;
+    border: none;
+    padding: 8px 16px;
+    margin: 0 4px;
+    border-radius: 4px;
+}
+
+.pagination .page-link:hover {
+    background-color: #f8f9fa;
+    color: #ff4500;
+}
+
+.pagination .page-item.active .page-link {
+    background-color: #ff4500;
+    color: white;
+    border: none;
+}
+
+.pagination .page-item:first-child .page-link,
+.pagination .page-item:last-child .page-link {
+    color: #6c757d;
+    font-weight: normal;
+}
+
+.pagination .page-item:first-child .page-link::before {
+    content: "←";
+    margin-right: 8px;
+}
+
+.pagination .page-item:last-child .page-link::after {
+    content: "→";
+    margin-left: 8px;
+}
+
+.loading-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+}
+
+/* ///////// */
+.small-btn-close {
+    width: 12px;
+    height: 12px;
+    font-size: 0.75rem;
+    padding: 0;
+}
+
+.form-select {
+    width: auto;
+    min-width: 120px;
+}
+
+
+/* Ensure the icon stays inside the input box */
+.input-group .input-group-text {
+    background-color: white !important;
+    border-right: none !important;
+    padding: 0 10px;
+    transition: color 0.3s ease;
+    /* Smooth transition for icon color */
+}
+
+.form-control.border-start-0 {
+    border-left: none !important;
+}
+
+
+.custom-focus:focus {
+    outline: none;
+    box-shadow: none !important;
+    border-color: #ff7f50 !important;
+}
+
+.input-group:has(.custom-focus:focus) .input-group-text {
+    border: 1px solid #ff7f50 !important;
+}
+
+/* Adjust padding for the input to make space for the icon */
+.form-control {
+    padding-left: 30px;
+}
+
+/* Change icon color on input focus */
+.custom-focus:focus+.input-group-text .bi {
+    color: #ff7f50 !important;
+}

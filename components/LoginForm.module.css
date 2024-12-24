@@ -1,0 +1,35 @@
+body {
+    background-color: #fff2ef;
+}
+
+.loginContainer {
+    font-family: 'Inter', sans-serif;
+}
+
+.brandTitle {
+    line-height: 48.41px;
+}
+
+.btnLogin {
+    background: linear-gradient(#FD5900, #FFB48C);
+}
+
+.btnLogin:hover {
+    background: linear-gradient(#FF5A1F, #FFA070);
+}
+
+.customCheckbox:checked {
+    background-color: #ff6b35;
+    border-color: #ff6b35;
+}
+
+.signin-forgot {
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+}
+
+.logo {
+    height: 40px;
+    width: 40px;
+}
